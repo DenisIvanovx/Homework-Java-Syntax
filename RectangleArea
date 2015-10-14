@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+/**
+ * Created by express on 14-Oct-15.
+ */
+public class RectangleArea {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        Integer firstNumber = sc.nextInt();
+        Integer secondNumber = sc.nextInt();
+
+        System.out.println(firstNumber * secondNumber);
+    }
+}
