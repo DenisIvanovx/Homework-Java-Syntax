@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+/**
+ * Created by express on 15-Oct-15.
+ Expression: ((a2 + b2) / (a2 – b2))(a + b + c) / √c             (a2 + b2 - c3)(a – b)
+ */
+public class CalculateExpression {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        Float a = sc.nextFloat();
+        Float b = sc.nextFloat();
+        Float c = sc.nextFloat();
+
+        float firstFormula = (float) Math.pow(((a * a) + (b * b)) / ((a * a) - (b * b)), (a + b + c) / Math.sqrt(c));
+        float secondFormula = (float) Math.pow((a * a + b * b - c * c * c), a - b);
+
+        float averageNumbers = (a + b + c) / 3;
+        float averageOfFormulas = (firstFormula + secondFormula) / 2;
+        float differenceBetweenAverage = Math.abs(averageNumbers - averageOfFormulas);
+        System.out.printf("F1 result: %.2f; F2 result: %.2f; Diff: %.2f;", firstFormula, secondFormula, differenceBetweenAverage);
+    }
+}
