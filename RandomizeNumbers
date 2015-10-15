@@ -1,0 +1,22 @@
+import java.util.Random;
+import java.util.Scanner;
+
+/**
+ * Created by express on 15-Oct-15.
+ */
+public class RandomizeNumbers {
+    public static void main(String[] args) {
+        Scanner reader = new Scanner(System.in);
+
+        int N = reader.nextInt();
+        int M = reader.nextInt();
+
+        int min = Math.min(N, M);
+        int max = Math.max(N, M);
+
+        Random rnd = new Random();
+        int randomNumbers = rnd.nextInt((max - min) + 1) + min;
+
+        System.out.println(randomNumbers);
+    }
+}
