@@ -1,0 +1,23 @@
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+/**
+ * Created by express on 16-Oct-15.
+ */
+public class StartsAndEndsWithCapital {
+
+    // Regex not finished!!!
+    public static void main(String[] args) {
+        Scanner reader = new Scanner(System.in);
+
+        String line = reader.nextLine();
+        String patter = "\\b[A-Z][a-zA-Z]*[A-Z]\\b";
+        Pattern rgxPattern = Pattern.compile(patter);
+        Matcher match = rgxPattern.matcher(line);
+
+        while (match.find()) {
+            System.out.print(match.group() + " ");
+        }
+    }
+}
