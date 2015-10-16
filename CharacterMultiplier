@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+/**
+ * Created by express on 16-Oct-15.
+ */
+public class CharacterMultiplier {
+    public static void main(String[] args) {
+
+        // The first test "Gosho Pesho" isnt working and i dont know why.
+        // As a result i get 53254 and it should be 54363.
+        // Others are fine.
+
+        Scanner reader = new Scanner(System.in);
+
+        String firstStr = reader.next();
+        String secondStr = reader.next();
+        Long number = sumOfChars(firstStr, secondStr);
+        System.out.println(number);
+    }
+
+    private static long sumOfChars(String first, String second) {
+        long totalSum = 0L;
+
+        for (int i = 0; i < first.length(); i++) {
+                totalSum += first.charAt(i) * second.charAt(i);
+        }
+        totalSum += checkIfLonger(first, second);
+        return totalSum;
+    }
+
+    private static long checkIfLonger(String first, String second) {
+        long reminderSum = 0L;
+
+        if (first.length() > second.length()) {
+            String reminder = first.substring(second.length());
+
+            for(int i = 0; i < reminder.length(); i++) {
+                reminderSum += reminder.charAt(i);
+            }
+        }
+        else if (second.length() > first.length()) {
+            String reminder = second.substring(first.length());
+            for (int i = 0; i < reminder.length(); i++) {
+                reminderSum += reminder.charAt(i);
+            }
+        }
+        return reminderSum;
+    }
+}
